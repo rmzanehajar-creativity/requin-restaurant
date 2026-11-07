@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>REQUIN Restaurant | Le goût de l'océan</title>
+<meta name="description" content="Restaurant de fruits de mer à Biarritz, REQUIN vous invite à savourer le goût authentique de l'océan.">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Lora:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+<nav class="navbar navbar-expand-md fixed-top" id="nav">
+ <div class="container">
+  <a class="navbar-brand brand" href="#accueil">REQUIN</a>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Ouvrir le menu"><span class="navbar-toggler-icon"></span></button>
+  <div class="collapse navbar-collapse" id="navMenu">
+   <ul class="navbar-nav mx-auto gap-md-2"><li class="nav-item"><a class="nav-link" href="#accueil">Accueil</a></li><li class="nav-item"><a class="nav-link" href="#menu">Menu</a></li><li class="nav-item"><a class="nav-link" href="#reservation">Réservation</a></li><li class="nav-item"><a class="nav-link" href="#apropos">À propos</a></li><li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li></ul>
+   <a href="#reservation" class="btn btn-ocean">Réserver</a>
+  </div>
+ </div>
+</nav>
+<main>
+<header class="hero" id="accueil">
+ <div class="container text-center text-white">
+  <h1 class="hero-title">REQUIN</h1>
+  <p class="hero-sub">Le goût de l'océan</p>
+  <p class="hero-text">Découvrez une expérience culinaire unique où la fraîcheur de l'océan rencontre l'excellence gastronomique</p>
+  <a href="#menu" class="btn btn-ocean btn-lg hero-cta">Découvrir le menu</a>
+ </div>
+</header>
+<section class="py-5 section-alt" id="menu"><div class="container py-md-4">
+ <h2 class="section-title">Notre Menu</h2>
+ <p class="section-lead">Une sélection raffinée de fruits de mer frais et de plats préparés avec passion</p>
+ <div class="d-flex flex-wrap justify-content-center gap-2 mb-5" id="tabs" role="tablist">
+  <button class="btn btn-tab active" data-tab="entrees">Entrées</button>
+  <button class="btn btn-tab" data-tab="plats">Plats</button>
+  <button class="btn btn-tab" data-tab="desserts">Desserts</button>
+  <button class="btn btn-tab" data-tab="boissons">Boissons</button>
+ </div>
+ <div class="row g-4" id="dishes"></div>
+</div></section>
+<section class="py-5" id="reservation"><div class="container py-md-4">
+ <h2 class="section-title">Réservation</h2>
+ <p class="section-lead">Réservez votre table pour une expérience inoubliable</p>
+ <div class="narrow mx-auto">
+  <form id="resForm" class="row g-3" novalidate>
+   <div class="col-12"><label for="nom" class="form-label">Nom complet</label><input type="text" id="nom" class="form-control" required minlength="3"><div class="invalid-feedback">Entrez votre nom (3 lettres minimum).</div></div>
+   <div class="col-12"><label for="email" class="form-label">Email</label><input type="email" id="email" class="form-control" required><div class="invalid-feedback">Entrez un email valide.</div></div>
+   <div class="col-12"><label for="telephone" class="form-label">Téléphone</label><input type="tel" id="telephone" class="form-control" required pattern="[0-9+ ]{8,15}"><div class="invalid-feedback">Entrez un numéro valide.</div></div>
+   <div class="col-md-6"><label for="personnes" class="form-label">Nombre de personnes</label><select id="personnes" class="form-select" required><option value="">Sélectionner</option><option value="1">1 personne</option><option value="2">2 personnes</option><option value="3">3 personnes</option><option value="4">4 personnes</option><option value="5">5 personnes</option><option value="6">6 personnes</option><option value="7+">7+ personnes</option></select><div class="invalid-feedback">Choisissez le nombre de personnes.</div></div>
+   <div class="col-md-6"><label for="date" class="form-label">Date</label><input type="date" id="date" class="form-control" required><div class="invalid-feedback">Choisissez une date.</div></div>
+   <div class="col-12"><label for="heure" class="form-label">Heure</label><select id="heure" class="form-select" required><option value="">Sélectionner</option><option>12:00</option><option>12:30</option><option>13:00</option><option>13:30</option><option>19:00</option><option>19:30</option><option>20:00</option><option>20:30</option><option>21:00</option></select><div class="invalid-feedback">Choisissez une heure.</div></div>
+   <div class="col-12"><button type="submit" class="btn btn-ocean btn-lg w-100">Confirmer la réservation</button></div>
+  </form>
+  <div class="alert alert-info text-center mt-4" id="resOk" role="alert" hidden>Merci pour votre réservation ! Nous vous confirmerons par email sous peu.</div>
+  <div class="hours mt-5"><h3 class="h5 text-center mb-3">Horaires d'ouverture</h3>
+   <p class="text-center text-muted mb-1">Mardi - Samedi : 12h00 - 14h30 &amp; 19h00 - 22h30</p>
+   <p class="text-center text-muted mb-1">Dimanche : 12h00 - 14h30</p>
+   <p class="text-center text-muted mb-0">Lundi : Fermé</p></div>
+ </div>
+</div></section>
+<section class="py-5 section-alt" id="apropos"><div class="container py-md-4">
+ <h2 class="section-title mb-5">À propos de REQUIN</h2>
+ <div class="row g-5 align-items-center mb-5">
+  <div class="col-lg-6"><img src="https://c.animaapp.com/mi9cn8hkit0cZz/img/ai_4.png" alt="Intérieur du restaurant REQUIN" class="img-fluid rounded-3 w-100 about-img" loading="lazy"></div>
+  <div class="col-lg-6 text-muted lh-lg">
+   <p>Fondé en 2015 à Biarritz, REQUIN est né de la passion de notre chef pour l'océan et ses trésors culinaires. Chaque jour, nous sélectionnons les meilleurs produits de la mer pour vous offrir une expérience gastronomique authentique et inoubliable.</p>
+   <p>Notre philosophie repose sur le respect de l'océan, la qualité des produits et l'excellence du service. Nous travaillons en étroite collaboration avec les pêcheurs locaux pour garantir la fraîcheur et la traçabilité de nos produits.</p>
+   <p class="mb-0">Dans notre restaurant au décor élégant et contemporain, laissez-vous transporter par les saveurs de la mer et découvrez notre cuisine raffinée qui célèbre le goût authentique de l'océan.</p>
+  </div>
+ </div>
+ <div class="row g-4"><div class="col-sm-6 col-lg-3"><article class="feature"><span class="icon-circle"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><h3 class="h5">Fraîcheur</h3><p class="mb-0">Produits sélectionnés chaque matin</p></article></div><div class="col-sm-6 col-lg-3"><article class="feature"><span class="icon-circle"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></span><h3 class="h5">Qualité</h3><p class="mb-0">Excellence dans chaque assiette</p></article></div><div class="col-sm-6 col-lg-3"><article class="feature"><span class="icon-circle"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4.3 6.3a4.5 4.5 0 000 6.4L12 20.4l7.7-7.7a4.5 4.5 0 00-6.4-6.4L12 7.6l-1.3-1.3a4.5 4.5 0 00-6.4 0z"/></svg></span><h3 class="h5">Passion</h3><p class="mb-0">Amour du métier et des saveurs</p></article></div><div class="col-sm-6 col-lg-3"><article class="feature"><span class="icon-circle"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3c3 4 6 7 6 10a6 6 0 11-12 0c0-3 3-6 6-10z"/></svg></span><h3 class="h5">Respect de l'océan</h3><p class="mb-0">Pêche durable et responsable</p></article></div></div>
+</div></section>
+<section class="py-5" id="contact"><div class="container py-md-4">
+ <h2 class="section-title mb-5">Contact</h2>
+ <div class="row g-5">
+  <div class="col-lg-6"><h3 class="h4 mb-4">Informations de contact</h3><div class="d-flex gap-3 mb-4"><span class="icon-circle flex-shrink-0"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M17.7 16.7L13.4 20.9a2 2 0 01-2.8 0l-4.2-4.2a8 8 0 1111.3 0zM15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg></span><div><h4 class="h6 mb-1">Adresse</h4><p class="mb-0 text-muted">15 Avenue de la Plage<br>64200 Biarritz, France</p></div></div><div class="d-flex gap-3 mb-4"><span class="icon-circle flex-shrink-0"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.3a1 1 0 01.9.7l1.5 4.5a1 1 0 01-.5 1.2l-2.3 1.1a11 11 0 005.5 5.5l1.1-2.3a1 1 0 011.2-.5l4.5 1.5a1 1 0 01.7.9V19a2 2 0 01-2 2h-1C9.7 21 3 14.3 3 6V5z"/></svg></span><div><h4 class="h6 mb-1">Téléphone</h4><p class="mb-0 text-muted">+33 5 59 24 35 46</p></div></div><div class="d-flex gap-3 mb-4"><span class="icon-circle flex-shrink-0"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.9 5.3a2 2 0 002.2 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></span><div><h4 class="h6 mb-1">Email</h4><p class="mb-0 text-muted">contact@requin-restaurant.fr</p></div></div><div class="d-flex gap-3 mb-4"><span class="icon-circle flex-shrink-0"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></span><div><h4 class="h6 mb-1">Horaires</h4><p class="mb-0 text-muted">Mardi - Samedi : 12h00 - 14h30 &amp; 19h00 - 22h30<br>Dimanche : 12h00 - 14h30<br>Lundi : Fermé</p></div></div></div>
+  <div class="col-lg-6"><h3 class="h4 mb-4">Localisation</h3>
+   <div class="ratio ratio-4x3 rounded-3 overflow-hidden"><iframe src="https://www.google.com/maps?q=Biarritz,France&amp;output=embed" style="border:0" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Localisation du restaurant REQUIN à Biarritz"></iframe></div>
+  </div>
+ </div>
+</div></section>
+</main>
+<footer class="footer text-white pt-5 pb-4"><div class="container">
+ <div class="row g-4 mb-4">
+  <div class="col-md-4"><h3 class="h4 fw-bold">REQUIN</h3><p class="opacity-75">Le goût authentique de l'océan dans chaque assiette. Une expérience culinaire unique à Biarritz.</p></div>
+  <div class="col-md-4"><h4 class="h6">Navigation</h4><ul class="list-unstyled flinks"><li><a href="#accueil">Accueil</a></li><li><a href="#menu">Menu</a></li><li><a href="#reservation">Réservation</a></li><li><a href="#apropos">À propos</a></li><li><a href="#contact">Contact</a></li></ul></div>
+  <div class="col-md-4"><h4 class="h6">Informations légales</h4><ul class="list-unstyled flinks"><li><a href="#">Mentions légales</a></li><li><a href="#">Politique de confidentialité</a></li><li><a href="#">Conditions générales de vente</a></li></ul></div>
+ </div>
+ <p class="text-center opacity-75 border-top border-light border-opacity-25 pt-4 mb-0">© <span id="year"></span> REQUIN Restaurant. Tous droits réservés.</p>
+</div></footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
